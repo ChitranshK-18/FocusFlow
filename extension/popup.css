@@ -1,0 +1,1216 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 430px;
+  min-width: 430px;
+
+  min-height: 100%;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #f8f4f5;
+
+  background: #10090b;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+  width: 430px;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(123, 21, 36, 0.48),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      135deg,
+      #10090b,
+      #240b10
+    );
+}
+
+
+/* =========================================
+   SCREENS
+
+   IMPORTANT:
+   ONLY ONE SCREEN IS DISPLAYED
+========================================= */
+
+.screen {
+  display: none;
+
+  width: 100%;
+
+  animation:
+    screenEnter
+    0.28s
+    ease;
+}
+
+
+.screen.active {
+  display: block;
+}
+
+
+@keyframes screenEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   DASHBOARD CONTAINER
+========================================= */
+
+.container {
+  width: 100%;
+
+  padding:
+    24px
+    26px
+    20px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+
+}
+
+
+.brand-label {
+
+  margin: 0;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    3px;
+
+  color:
+    #f08b95;
+
+}
+
+
+h1 {
+
+  margin:
+    6px 0 0;
+
+  font-size: 34px;
+
+  line-height: 1;
+
+  letter-spacing:
+    -1px;
+
+}
+
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings-btn {
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius:
+    16px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.06);
+
+  color:
+    #f5d9dc;
+
+  font-size: 19px;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.2s ease;
+
+}
+
+
+.settings-btn:hover {
+
+  transform:
+    scale(1.05);
+
+  background:
+    rgba(255,255,255,0.1);
+
+}
+
+
+/* =========================================
+   GREETING
+========================================= */
+
+.greeting {
+
+  margin-top: 28px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+}
+
+
+.greeting p {
+
+  margin: 0;
+
+  font-size: 14px;
+
+  color:
+    rgba(255,255,255,0.65);
+
+}
+
+
+.tracking-control {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+}
+
+
+.live-status {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap: 7px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color:
+    #f1d5d8;
+
+}
+
+
+.status-dot {
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    #21d07a;
+
+  box-shadow:
+    0 0 10px
+    rgba(33,208,122,0.7);
+
+}
+
+
+/* =========================================
+   SWITCH
+========================================= */
+
+.switch {
+
+  position: relative;
+
+  display: inline-block;
+
+  width: 52px;
+
+  height: 30px;
+
+}
+
+
+.switch input {
+
+  opacity: 0;
+
+  width: 0;
+
+  height: 0;
+
+}
+
+
+.slider {
+
+  position: absolute;
+
+  inset: 0;
+
+  cursor: pointer;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,0.14);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.13);
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.slider::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 22px;
+
+  height: 22px;
+
+  left: 3px;
+
+  top: 3px;
+
+  border-radius: 50%;
+
+  background:
+    #f2f2f2;
+
+  transition:
+    0.25s ease;
+
+}
+
+
+.switch input:checked + .slider {
+
+  background:
+    linear-gradient(
+      90deg,
+      #d82e3d,
+      #ff6576
+    );
+
+}
+
+
+.switch input:checked + .slider::before {
+
+  transform:
+    translateX(22px);
+
+}
+
+
+/* =========================================
+   SUMMARY CARD
+========================================= */
+
+.summary-card {
+
+  margin-top: 24px;
+
+  padding: 25px;
+
+  min-height: 165px;
+
+  border-radius:
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.13);
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(160,25,48,0.42),
+      transparent 55%
+    ),
+
+    rgba(255,255,255,0.04);
+
+}
+
+
+.label {
+
+  margin: 0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    1.2px;
+
+  color:
+    rgba(255,255,255,0.58);
+
+}
+
+
+#totalTime {
+
+  margin:
+    15px 0;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+}
+
+
+.time-footer {
+
+  margin-top: 14px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  color:
+    rgba(255,255,255,0.6);
+
+  font-size: 14px;
+
+}
+
+
+.sparkle {
+
+  font-size: 21px;
+
+  color:
+    #ff6380;
+
+}
+
+
+/* =========================================
+   PRODUCTIVITY
+========================================= */
+
+.productivity-card {
+
+  margin-top: 18px;
+
+  padding: 21px;
+
+  border-radius:
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.13);
+
+  background:
+    rgba(255,255,255,0.045);
+
+}
+
+
+.productivity-header {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+}
+
+
+.card-title {
+
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+}
+
+
+.card-subtitle {
+
+  margin:
+    5px 0 0;
+
+  font-size: 13px;
+
+  color:
+    rgba(255,255,255,0.55);
+
+}
+
+
+.score {
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+}
+
+
+.score span {
+
+  font-size: 32px;
+
+}
+
+
+.progress-track {
+
+  width: 100%;
+
+  height: 9px;
+
+  margin-top: 19px;
+
+  overflow: hidden;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+}
+
+
+.progress-bar {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #d82e3d,
+      #ff7c88
+    );
+
+  transition:
+    width
+    0.4s
+    ease;
+
+}
+
+
+/* =========================================
+   DAILY FOCUS GOAL
+========================================= */
+
+.focus-goal-card {
+
+  margin-top: 18px;
+
+  padding: 21px;
+
+  border-radius:
+    25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.13);
+
+  background:
+    rgba(255,255,255,0.035);
+
+}
+
+
+.focus-goal-header {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-start;
+
+}
+
+
+.focus-goal-header h3 {
+
+  margin: 0;
+
+  font-size: 19px;
+
+}
+
+
+.focus-goal-header p {
+
+  margin:
+    5px 0 0;
+
+  font-size: 13px;
+
+  color:
+    rgba(255,255,255,0.58);
+
+}
+
+
+.goal-score {
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+}
+
+
+.goal-score span {
+
+  font-size: 29px;
+
+  font-weight: 800;
+
+}
+
+
+.goal-progress-track {
+
+  width: 100%;
+
+  height: 9px;
+
+  margin-top: 19px;
+
+  overflow: hidden;
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(255,255,255,0.09);
+
+}
+
+
+.goal-progress-bar {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #e13748,
+      #ff7581
+    );
+
+  transition:
+    width
+    0.4s
+    ease;
+
+}
+
+
+.goal-footer {
+
+  margin-top: 16px;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+}
+
+
+#goalText {
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.65);
+
+}
+
+
+.goal-icon {
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius:
+    13px;
+
+  font-size: 17px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+}
+
+
+/* =========================================
+   TOP ACTIVITY
+========================================= */
+
+.websites-section {
+
+  margin-top: 24px;
+
+}
+
+
+.section-header {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  margin-bottom: 13px;
+
+}
+
+
+.section-header h3 {
+
+  margin: 0;
+
+  font-size: 19px;
+
+}
+
+
+.section-header span {
+
+  padding:
+    7px
+    11px;
+
+  border-radius:
+    999px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.65);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.1);
+
+  background:
+    rgba(255,255,255,0.05);
+
+}
+
+
+.website-item {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  margin-bottom: 10px;
+
+  padding:
+    16px;
+
+  border-radius:
+    19px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.11);
+
+  background:
+    rgba(255,255,255,0.045);
+
+}
+
+
+.website-name {
+
+  max-width: 220px;
+
+  overflow: hidden;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+}
+
+
+.website-time {
+
+  padding:
+    8px
+    11px;
+
+  border-radius:
+    12px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color:
+    #f3bdc4;
+
+  border:
+    1px solid
+    rgba(220,50,70,0.3);
+
+  background:
+    rgba(110,15,30,0.3);
+
+}
+
+
+.empty-message {
+
+  text-align: center;
+
+  padding: 20px;
+
+  color:
+    rgba(255,255,255,0.5);
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+  margin-top: 20px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  font-size: 13px;
+
+  color:
+    rgba(255,255,255,0.55);
+
+}
+
+
+footer span:last-child {
+
+  font-size: 22px;
+
+  color:
+    #ff6a7b;
+
+}
+
+
+/* =========================================
+   PAUSED SCREEN
+========================================= */
+
+.paused-container {
+
+  min-height: 520px;
+
+  padding:
+    55px
+    34px
+    45px;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  text-align:
+    center;
+
+}
+
+
+/* =========================================
+   PAUSED LOGO
+========================================= */
+
+.logo-box {
+
+  width: 108px;
+
+  height: 108px;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    30px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.035);
+
+  overflow: hidden;
+
+}
+
+
+.logo-box img {
+
+  width: 82px;
+
+  height: 82px;
+
+  object-fit:
+    contain;
+
+}
+
+
+/* =========================================
+   PAUSED TEXT
+========================================= */
+
+.paused-brand {
+
+  margin:
+    28px 0 0;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    5px;
+
+  color:
+    #f08b95;
+
+}
+
+
+.paused-container h2 {
+
+  margin:
+    16px 0 0;
+
+  font-size: 31px;
+
+  line-height: 1.1;
+
+}
+
+
+.paused-description {
+
+  max-width: 310px;
+
+  margin:
+    13px 0 0;
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  color:
+    rgba(255,255,255,0.62);
+
+}
+
+
+/* =========================================
+   PAUSED TOGGLE
+========================================= */
+
+.paused-toggle-card {
+
+  width: 100%;
+
+  margin-top: 34px;
+
+  padding:
+    18px
+    20px;
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  border-radius:
+    22px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.045);
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+}
+
+
+.paused-footer {
+
+  margin-top: 28px;
+
+  max-width: 300px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(255,255,255,0.55);
+
+}
+/* =========================================
+   EDIT FOCUS GOAL BUTTON
+========================================= */
+
+.goal-icon {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color:
+    #ff6a7b;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+
+}
+
+
+.goal-icon svg {
+
+  width: 19px;
+
+  height: 19px;
+
+}
+
+
+.goal-icon:hover {
+
+  background:
+    rgba(255, 80, 100, 0.14);
+
+  border-color:
+    rgba(255, 100, 120, 0.35);
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+.goal-icon:active {
+
+  transform:
+    scale(0.95);
+
+}
+
+
+.goal-icon:hover {
+
+  transform:
+
+    scale(1.06);
+
+  background:
+
+    rgba(255,70,90,0.15);
+
+}
+
+
+.goal-icon:active {
+
+  transform:
+
+    scale(0.95);
+
+}

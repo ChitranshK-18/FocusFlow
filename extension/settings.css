@@ -1,0 +1,406 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+  box-sizing:
+    border-box;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family:
+
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:
+    #f8f4f5;
+
+  background:
+
+    radial-gradient(
+      circle at top right,
+      rgba(120,20,40,0.55),
+      transparent 40%
+    ),
+
+    linear-gradient(
+      135deg,
+      #10090b,
+      #260b11
+    );
+
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.settings-container {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding:
+
+    28px
+    28px
+    60px;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.settings-header {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap: 22px;
+
+  margin-bottom: 48px;
+
+}
+
+
+.settings-header p {
+
+  margin: 0;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    4px;
+
+  color:
+    #ed919b;
+
+}
+
+
+.settings-header h1 {
+
+  margin:
+
+    6px 0 0;
+
+  font-size: 42px;
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn {
+
+  width: 50px;
+
+  height: 50px;
+
+  border-radius:
+    17px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+
+    rgba(255,255,255,0.06);
+
+  color:
+    white;
+
+  font-size: 24px;
+
+  cursor:
+    pointer;
+
+}
+
+
+/* =========================================
+   SETTINGS CARD
+========================================= */
+
+.settings-card {
+
+  margin-bottom: 26px;
+
+  padding: 34px;
+
+  border-radius:
+    30px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+
+    rgba(255,255,255,0.045);
+
+}
+
+
+.settings-card h2 {
+
+  margin: 0;
+
+  font-size: 24px;
+
+}
+
+
+.settings-card p {
+
+  margin:
+
+    8px 0 24px;
+
+  color:
+
+    rgba(255,255,255,0.62);
+
+}
+
+
+/* =========================================
+   SITE ITEM
+========================================= */
+
+.site-item {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding:
+
+    17px 20px;
+
+  margin-bottom: 10px;
+
+  border-radius:
+    16px;
+
+  background:
+
+    rgba(120,20,35,0.3);
+
+  border:
+
+    1px solid
+    rgba(255,255,255,0.04);
+
+}
+
+
+.site-name {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+}
+
+
+.remove-btn {
+
+  border: none;
+
+  background:
+    transparent;
+
+  color:
+    #ff6878;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  cursor:
+    pointer;
+
+}
+
+
+/* =========================================
+   ADD WEBSITE
+========================================= */
+
+.add-site {
+
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+}
+
+
+.add-site input {
+
+  flex: 1;
+
+  padding:
+
+    16px 18px;
+
+  border-radius:
+    15px;
+
+  outline: none;
+
+  color:
+    white;
+
+  font-size: 15px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,0.15);
+
+  background:
+
+    rgba(0,0,0,0.25);
+
+}
+
+
+.add-site button {
+
+  min-width: 95px;
+
+  border: none;
+
+  border-radius:
+    15px;
+
+  color:
+    white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor:
+    pointer;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #d92d3b,
+      #ff4242
+    );
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+.danger-section {
+
+  margin-top: 35px;
+
+  padding: 30px;
+
+  border-radius:
+    26px;
+
+  border:
+
+    1px solid
+    rgba(255,80,90,0.15);
+
+  background:
+
+    rgba(100,10,20,0.2);
+
+}
+
+
+.danger-section h2 {
+
+  margin: 0;
+
+}
+
+
+.danger-section p {
+
+  color:
+
+    rgba(255,255,255,0.6);
+
+}
+
+
+.reset-btn {
+
+  margin-top: 12px;
+
+  padding:
+
+    14px 20px;
+
+  border: none;
+
+  border-radius:
+    14px;
+
+  color:
+    white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor:
+    pointer;
+
+  background:
+    #a82b38;
+
+}
+
+
+.reset-btn:hover {
+
+  background:
+    #cf3445;
+
+}

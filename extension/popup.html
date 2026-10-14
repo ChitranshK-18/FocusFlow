@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>FocusFlow</title>
+
+  <link
+    rel="stylesheet"
+    href="popup.css"
+  >
+</head>
+
+
+<body>
+
+
+  <div class="app">
+
+
+    <!-- =========================
+         DASHBOARD SCREEN
+    ========================== -->
+
+    <main
+      id="dashboardScreen"
+      class="screen active"
+    >
+
+
+      <div class="container">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+          <div>
+
+            <p class="brand-label">
+              PRODUCTIVITY TRACKER
+            </p>
+
+            <h1>
+              FocusFlow
+            </h1>
+
+          </div>
+
+
+          <button
+            id="settingsBtn"
+            class="settings-btn"
+            title="Settings"
+          >
+            ⚙
+          </button>
+
+        </header>
+
+
+        <!-- STATUS -->
+
+        <div class="greeting">
+
+          <p>
+            Your digital day
+          </p>
+
+
+          <div class="tracking-control">
+
+            <span class="live-status">
+
+              <span
+                class="status-dot"
+              ></span>
+
+              Tracking
+
+            </span>
+
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                id="dashboardToggle"
+                checked
+              >
+
+              <span
+                class="slider"
+              ></span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOTAL TIME -->
+
+        <section class="summary-card">
+
+          <p class="label">
+            TODAY'S TRACKED TIME
+          </p>
+
+
+          <h2 id="totalTime">
+            0m
+          </h2>
+
+
+          <div class="time-footer">
+
+            <span>
+              Stay focused.
+            </span>
+
+
+            <span class="sparkle">
+              ✦
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- PRODUCTIVITY -->
+
+        <section class="productivity-card">
+
+          <div class="productivity-header">
+
+            <div>
+
+              <p class="card-title">
+                Productivity
+              </p>
+
+
+              <p class="card-subtitle">
+                Based on your activity
+              </p>
+
+            </div>
+
+
+            <div class="score">
+
+              <span id="productivityScore">
+                0
+              </span>
+
+              %
+
+            </div>
+
+          </div>
+
+
+          <div class="progress-track">
+
+            <div
+              id="progressBar"
+              class="progress-bar"
+            ></div>
+
+          </div>
+
+        </section>
+
+
+        <!-- FOCUS GOAL -->
+
+        <section class="focus-goal-card">
+
+          <div class="focus-goal-header">
+
+            <div>
+
+              <h3>
+                Daily Focus Goal
+              </h3>
+
+              <p>
+                Productive time today
+              </p>
+
+            </div>
+
+
+            <div class="goal-score">
+
+              <span id="goalPercentage">
+                0
+              </span>
+
+              %
+
+            </div>
+
+          </div>
+
+
+          <div class="goal-progress-track">
+
+            <div
+              id="goalProgressBar"
+              class="goal-progress-bar"
+            ></div>
+
+          </div>
+
+
+          <div class="goal-footer">
+
+            <span id="goalText">
+              0m of 5h completed
+            </span>
+
+
+          <button
+  id="editGoalBtn"
+  class="goal-icon"
+  type="button"
+  title="Edit daily focus goal"
+  aria-label="Edit daily focus goal"
+>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M12 20h9"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</button>
+
+          </div>
+
+        </section>
+
+
+        <!-- TOP ACTIVITY -->
+
+        <section class="websites-section">
+
+          <div class="section-header">
+
+            <h3>
+              Top Activity
+            </h3>
+
+
+            <span>
+              Today
+            </span>
+
+          </div>
+
+
+          <div id="websiteList">
+
+            <p class="empty-message">
+              Start browsing to see your activity ✦
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+          <span>
+            Focus better. Flow longer.
+          </span>
+
+
+          <span>
+            →
+          </span>
+
+        </footer>
+
+
+      </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         PAUSED SCREEN
+    ========================== -->
+
+    <main
+      id="pausedScreen"
+      class="screen"
+    >
+
+
+      <div class="paused-container">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-box">
+
+          <img
+            src="icons/icon128.png"
+            alt="FocusFlow"
+          >
+
+        </div>
+
+
+        <p class="paused-brand">
+          FOCUSFLOW
+        </p>
+
+
+        <h2>
+          Tracking paused
+        </h2>
+
+
+        <p class="paused-description">
+          Your browsing activity is not being tracked right now.
+        </p>
+
+
+        <!-- TOGGLE CARD -->
+
+        <div class="paused-toggle-card">
+
+          <span>
+            Tracking
+          </span>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="pausedToggle"
+            >
+
+            <span
+              class="slider"
+            ></span>
+
+          </label>
+
+        </div>
+
+
+        <p class="paused-footer">
+          Turn tracking back on to continue your flow.
+        </p>
+
+
+      </div>
+
+
+    </main>
+
+
+  </div>
+
+
+  <script
+    src="popup.js"
+  ></script>
+
+
+</body>
+
+</html>
