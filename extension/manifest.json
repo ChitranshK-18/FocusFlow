@@ -10,7 +10,7 @@
     "notifications"
   ],
   "host_permissions": [
-    "http://localhost:3000/*"
+    "https://focusflow-backend-hn6a.onrender.com/*"
   ],
   "background": {
     "service_worker": "background.js"

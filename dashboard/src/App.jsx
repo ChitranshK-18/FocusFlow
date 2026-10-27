@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API_BASE = "http://localhost:3000";
+
+const API_BASE = "https://focusflow-backend-hn6a.onrender.com";
 const API_URL = `${API_BASE}/api/usage`;
 const TIMETABLE_API = `${API_BASE}/api/timetable`;
+
 
 const PRODUCTIVE_SITES = [
   "github.com",
@@ -200,18 +202,6 @@ function App() {
   });
 
   useEffect(() => {
-    fetchUsage();
-    fetchTimetable();
-
-    const interval = setInterval(() => {
-      fetchUsage();
-      fetchTimetable();
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
     localStorage.setItem("focusflowGoal", String(goal));
   }, [goal]);
 
@@ -273,6 +263,21 @@ function App() {
       setTimetableLoading(false);
     }
   }
+
+  useEffect(() => {
+    const loadDashboardData = () => {
+      void fetchUsage();
+      void fetchTimetable();
+    };
+
+    const initialLoad = window.setTimeout(loadDashboardData, 0);
+    const interval = setInterval(loadDashboardData, 10000);
+
+    return () => {
+      clearTimeout(initialLoad);
+      clearInterval(interval);
+    };
+  }, []);
 
   const filteredUsage = useMemo(
     () => usage.filter((record) => isRecordInRange(record, range)),

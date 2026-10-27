@@ -11,7 +11,7 @@ const TRACKING_ENABLED_KEY = "trackingEnabled";
 const LAST_VISIT_KEY = "lastVisitByDomain";
 const TIMETABLE_KEY = "focusflowTimetable";
 
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://focusflow-backend-hn6a.onrender.com";
 
 const SAVE_ALARM = "saveTrackingTime";
 const TIMETABLE_ALARM = "checkTimetable";
